@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>DOM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+        <h1>DOM</h1>
+
+        <h2>getElementById</h2>
+        <p id="innerHTML"></p>
+        <p>.innerHTML is a property</p>
+        <p>getElementById is the method</p>
+        <script>
+            document.getElementById("innerHTML").innerHTML = "Changing p element through with 'id= innerHTML'.";
+
+        </script>
+
+        <h2 id="style">Changing the CSS using events</h2>
+        <button type="button" onclick="document.getElementById('style').style.color = 'red'">
+            CLICK AT YOUR OWN PERIL!!</button>
+
+        <h2>Nodes</h2>
+        <h3>createElement() and the appendChild() method</h3>
+        <div id="div1">
+            <p id="p1">This is a paragraph.</p>
+            <p id="p2">This is another paragraph.</p>
+        </div>
+        <img src="NodesExplained.png" alt="DOM Nodes" width="500" height="300">
+
+        <script>
+            var para = document.createElement("p");
+            var node = document.createTextNode("This is new.");
+            para.appendChild(node);
+
+            var element = document.getElementById("div1");
+            element.appendChild(para);
+
+            //Source https://www.w3schools.com/js/js_htmldom_nodes.asp
+        </script>
+
+        <h2>insertBefore()</h2>
+        <div id="div2">
+            <p id="p3">This is a paragraph.</p>
+            <p id="p4">This is another paragraph.</p>
+        </div>
+
+        <script>
+            var para = document.createElement("p");
+            var node = document.createTextNode("This is new.");
+            para.appendChild(node);
+
+            var element = document.getElementById("div2");
+            var child = document.getElementById("p3");
+            element.insertBefore(para, child);
+            //Source https://www.w3schools.com/js/js_htmldom_nodes.asp
+        </script>
+        
+        <h2>Remove Elements</h2>
+        <div id="div4">
+            <p id="p5">This is a paragraph.</p>
+            <p id="p6">This is another paragraph.</p>
+        </div>
+
+        <script>
+        var parent = document.getElementById("div4");
+        var child = document.getElementById("p5");
+        parent.removeChild(child);
+        //Source https://www.w3schools.com/js/js_htmldom_nodes.asp
+        </script>
+        <img src="RemovingElements.png" alt="DOM Removing Elements" width="500" height="300">
+    </body>
+</html>
